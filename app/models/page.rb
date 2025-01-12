@@ -11,7 +11,7 @@ class Page < ApplicationRecord
 
     result = case check_type
     when "text"
-      scraper.text(selector: selector).downcase == match.text.downcase
+      scraper.text(selector: selector).downcase == match_text.downcase
     when "exists"
       scraper.present?(selector: selector)
     when "not_exists"
